@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Proyecto Primer Parcial PW</title>
+    <title>ALGORITMOS DE CLASIFICACIÓN</title>
     <link rel="stylesheet" href="css/estilos.css">
 
 
@@ -56,7 +56,7 @@
             height: 350px;
             width: 300px;
             top: -31.3em;
-            left: 35%;
+            left: 1%;
         }
         
         #t2 {
@@ -70,8 +70,8 @@
         #cont3 {
             height: 350px;
             width: 300px;
-            top: -23.15em;
-            left: 35%;
+            top: -10.15em;
+            left: 1%;
         }
         
         #t3 {
@@ -85,36 +85,46 @@
         #cont4 {
             height: 250px;
             width: 570px;
-            top: -29.3em;
-            left: 35%;
+            top: -18.3em;
+            left: 1%;
         }
         
         #cont5 {
             height: 350px;
             width: 300px;
-            top: -44.9em;
+            top: -20.9em;
             left: 1%;
         }
         
         #cont6 {
             height: 250px;
             width: 570px;
-            top: -51em;
-            left: 35%;
+            top: -29em;
+            left: 1%;
         }
         
         #cont7 {
             height: 350px;
             width: 300px;
-            top: -66.6em;
+            top: -30.6em;
             left: 1%;
         }
         
         #textb1 {
             height: 350px;
             width: 300px;
-            top: -66.9em;
-            left: 72%;
+            top: -43.9em;
+            left: 1%;
+        }
+        
+        #iris {
+            top: -3.3em;
+            left: 9%;
+        }
+        
+        #vidrios {
+            top: -6.65em;
+            left: 18%;
         }
     </style>
 
@@ -146,20 +156,31 @@
 
     <section class="jumbotron  text-left">
         <div class="col-md-10" id="cardg">
-            <h3>MACHINE LEARNING - ANÁLISIS DE SENTIMIENTOS CON vidiros</h3>
-            <p class="lead text-muted" align="justify">Esta aplicación web muestra la probabilidad de sentimiento de un tweet dando como respuesta si este es negativo o positivo. Realizamos el proceso de NLP para obtener los resultados. Los Tweets estan basados en los comentarios referentes al
-                COVID-19 de ECUADOR
+            <h3>MACHINE LEARNING - CLASIFICACIÓN - DATASET VIDRIOS</h3>
+            <p class="lead text-muted" align="justify"> Este conjunto de datos contiene atributos con respecto a varios tipos de vidrio (multiclase), este conjunto de datos contiene atributos con respecto a varios tipos de vidrio (multiclase). Aquí, la clase 6 es una clase minoritaria clara, ya
+                que dichos puntos de la clase 6 están marcados como valores atípicos, mientras que todos los demás puntos son inliers.
             </p>
 
             <p>
-                <form action="/add_data">
-                    <button class="btn btn-primary my-2" type="submit">VIDRIOS</button>
-                </form>
 
-                <form action="/add_resultadoRs">
+                <form action="/" id="inicio">
                     <!-- <a href="#title" class="btn btn-primary my-2">Estadísticas</a> -->
-                    <button class="btn btn-primary my-2" type="submit">IRIS</button>
+                    <button class="btn btn-primary my-2" type="submit">INICIO</button>
                 </form>
+                <div class="col-md-10" id="iris">
+                    <form action="/add_resultadoRs">
+                        <!-- <a href="#title" class="btn btn-primary my-2">Estadísticas</a> -->
+                        <button class="btn btn-primary my-2" type="submit">IRIS</button>
+                    </form>
+                </div>
+                <div class="col-md-10" id="vidrios">
+                    <form action="/add_data" id="vidrios">
+                        <button class="btn btn-primary my-2" type="submit">VIDRIOS</button>
+                    </form>
+                </div>
+
+
+
             </p>
         </div>
     </section>
@@ -186,13 +207,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
+                        </tr>
 
-                        {%for elemento in dt %}
                         <tr>
 
+                            {%for elemento in dt %}
                             <td>{{elemento}} </td>
-
                             {% endfor%}
+
+
                         </tr>
 
 
@@ -218,13 +246,18 @@
                     </thead>
                     <tbody>
 
-                        </tr>
-                        {%for formu in dnb %}
                         <tr>
-                            <td>{{formu}} </td>
-
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
                         </tr>
-                        {% endfor %}
+                        <tr>
+                            {%for formu in dnb %}
+                            <td>{{formu}} </td>
+                            {% endfor %}
+                        </tr>
+
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -247,13 +280,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        {%for formu in drf %}
                         <tr>
-                            <td>{{formu}} </td>
-
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
                         </tr>
-                        {% endfor %}
+
+                        <tr>
+                            {%for formu in drf %}
+                            <td>{{formu}} </td>
+                            {% endfor %}
+                        </tr>
+
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -275,13 +314,20 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        {%for formu in dknn %}
                         <tr>
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
+                        </tr>
+
+                        <tr>
+                            {%for formu in dknn %}
                             <td>{{formu}} </td>
+                            {% endfor %}
 
                         </tr>
-                        {% endfor %}
+
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -302,13 +348,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        {%for formu in dsvm %}
                         <tr>
-                            <td>{{formu}} </td>
-
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
                         </tr>
-                        {% endfor %}
+
+                        <tr>
+                            {%for formu in dsvm %}
+                            <td>{{formu}} </td>
+                            {% endfor %}
+                        </tr>
+
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -330,13 +382,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        {%for formu in dn %}
                         <tr>
-                            <td>{{formu}} </td>
-
+                            <td>ACURACCY </td>
+                            <td>PRESICION </td>
+                            <td>RECALL </td>
+                            <td>F-MEASURE</td>
                         </tr>
-                        {% endfor %}
+
+                        <tr>
+                            {%for formu in dn %}
+                            <td>{{formu}} </td>
+                            {% endfor %}
+                        </tr>
+
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -345,18 +403,7 @@
             <!-- end content -->
 
 
-            <!-- TEXTBOX -->
-            <div class="col-md-4" id="textb1">
-                <form action="/add_resultado1" method="POST">
-                    <input class="form-control mr-sm-2" type="search" name="consulta" placeholder="Buscar" aria-label="Search">
-                    </br>
-                    <input class="form-control mr-sm-2" type="search" name="numero" placeholder="Número de Twitts" aria-label="Search">
-                    </br>
-                    <input class="form-control mr-sm-2" type="search" name="lenguaje" placeholder="lenguaje" aria-label="Search">
-                    </br>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TextBlobs</button>
-                </form>
-            </div>
+
         </article>
     </main>
 
