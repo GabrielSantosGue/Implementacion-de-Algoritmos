@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Proyecto Primer Parcial PW</title>
+    <title>ALGORITMOS DE CLASIFICACIÓN</title>
     <link rel="stylesheet" href="css/estilos.css">
 
 
@@ -34,6 +34,13 @@
             height: 200px;
             top: 1em;
             width: 580px;
+            left: 5%;
+        }
+        
+        #title2 {
+            height: 200px;
+            top: -40em;
+            width: 780px;
             left: 2%;
         }
         
@@ -49,29 +56,29 @@
             width: 400px;
             top: 3em;
             left: 30%;
-            background-color: rgba(22, 200, 223, 0.473);
+            background-color: rgba(19, 196, 19, 0.562);
         }
         
         #cont2 {
             height: 350px;
             width: 300px;
             top: -31.3em;
-            left: 28%;
+            left: 1%;
         }
         
         #t2 {
             height: 40px;
             width: 400px;
             top: 3em;
-            left: 60%;
+            left: 55%;
             background-color: rgba(19, 196, 19, 0.562)
         }
         
         #cont3 {
             height: 350px;
             width: 300px;
-            top: -45em;
-            left: 35%;
+            top: -8.15em;
+            left: 1%;
         }
         
         #t3 {
@@ -82,11 +89,49 @@
             background-color: rgba(19, 196, 19, 0.562)
         }
         
+        #cont4 {
+            height: 250px;
+            width: 570px;
+            top: -18.3em;
+            left: 1%;
+        }
+        
+        #cont5 {
+            height: 350px;
+            width: 300px;
+            top: -20.9em;
+            left: 1%;
+        }
+        
+        #cont6 {
+            height: 250px;
+            width: 570px;
+            top: -29em;
+            left: 1%;
+        }
+        
+        #cont7 {
+            height: 350px;
+            width: 300px;
+            top: -30.6em;
+            left: 1%;
+        }
+        
         #textb1 {
             height: 350px;
             width: 300px;
-            top: -66.9em;
-            left: 72%;
+            top: -43.9em;
+            left: 1%;
+        }
+        
+        #iris {
+            top: -3.3em;
+            left: 9%;
+        }
+        
+        #vidrios {
+            top: -6.65em;
+            left: 18%;
         }
     </style>
 
@@ -118,28 +163,40 @@
 
     <section class="jumbotron  text-left">
         <div class="col-md-10" id="cardg">
-            <h3>MACHINE LEARNING - ANÁLISIS DE SENTIMIENTOS CON TWITTER</h3>
-            <p class="lead text-muted" align="justify">Esta aplicación web muestra la probabilidad de sentimiento de un tweet dando como respuesta si este es negativo o positivo. Realizamos el proceso de NLP para obtener los resultados. Los Tweets estan basados en los comentarios referentes al
-                COVID-19 de ECUADOR
+            <h3>MACHINE LEARNING - ALGORITMOS DE CLASIFICACIÓN - DATASET IRIS</h3>
+            <p class="lead text-muted" align="justify">Esta aplicación web muestra la evaluación de rendimientos del seis algortimos de clasificación, con el uso de dos dataset los cuales son IRIS y VIDRIOS.
             </p>
 
+
+
             <p>
-                <form action="/add_data">
 
-                    <button class="btn btn-primary my-2" type="submit">VIDRIOS</button>
+                <form action="/" id="inicio">
+                    <!-- <a href="#title" class="btn btn-primary my-2">Estadísticas</a> -->
+                    <button class="btn btn-primary my-2" type="submit">INICIO</button>
                 </form>
+                <div class="col-md-10" id="iris">
+                    <form action="/add_resultadoRs">
+                        <!-- <a href="#title" class="btn btn-primary my-2">Estadísticas</a> -->
+                        <button class="btn btn-primary my-2" type="submit">IRIS</button>
+                    </form>
+                </div>
+                <div class="col-md-10" id="vidrios">
+                    <form action="/add_data" id="vidrios">
+                        <button class="btn btn-primary my-2" type="submit">VIDRIOS</button>
+                    </form>
+                </div>
 
-                <form action="/add_resultadoRs">
 
-                    <button class="btn btn-primary my-2" type="submit">IRIS</button>
-                </form>
+
             </p>
         </div>
     </section>
     <!--END JUMBO-->
 
     <div id="title" align="center">
-        <h1>ANÁLISIS DE SENTIMIENTOS</h1>
+        <h1>TABLA BENCHMARKING - IRIS</h1>
+
     </div>
 
     <main class="principal">
@@ -152,19 +209,55 @@
                 <table class="table table-striped" id="t1">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">TWEET JACCARD</th>
+                            <th scope="col">DATA IRIS</th>
                             <!-- <th scope="col">SENTIMIENTO</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        {%for elemento in dt %}
                         <tr>
+                            <td>MÉTRICAS &nbsp&nbsp&nbsp&nbsp&nbsp </td>
+                            <td>REGRESIÓN LOGÍSTICA </td>
+                            <td>NAIVE BAYES</td>
+                            <td>RANDOM FOREST</td>
+                            <td>SVM</td>
+                            <td>KNN</td>
+                            <td>RED NEURONAL</td>
 
-                            <td>{{elemento}} </td>
-
-                            {% endfor%}
                         </tr>
 
+                        <tr>
+                            <td>ACCURACY</td>
+                            {%for elemento in dt %}
+                            <td>{{elemento}} </td>
+                            {% endfor%}
+
+
+                        </tr>
+                        <tr>
+                            <td>PRECISION</td>
+                            {%for elemento in dp %}
+                            <td>{{elemento}} </td>
+                            {% endfor%}
+
+
+                        </tr>
+                        <tr>
+                            <td>RECALL</td>
+                            {%for elemento in dr %}
+                            <td>{{elemento}} </td>
+                            {% endfor%}
+
+
+                        </tr>
+                        <tr>
+                            <td>F-MEASURE</td>
+
+                            {%for elemento in dfm %}
+                            <td>{{elemento}} </td>
+                            {% endfor%}
+
+
+                        </tr>
 
                     </tbody>
                 </table>
@@ -174,11 +267,11 @@
             <!-- end content -->
 
             <!-- Content here_____________________2_________________-->
-            <div class="col-md-4" id="cont2">
+            <!-- <div class="col-md-4" id="cont2"> -->
 
 
-                <!--tabbla -->
-                <!-- <table class="table" id="t1">
+            <!--tabbla -->
+            <!-- <table class="table" id="t1">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">TWEET</th>
@@ -194,11 +287,14 @@
                 {% endfor%}
             </tbody>
         </table> -->
-                <!-- end tabal -->
-            </div>
+            <!-- end tabal -->
+            <!-- </div> -->
 
             <!-- end content -->
+            <div id="title2">
+                <h1>TABLA BENCHMARKING - VIDRIOS</h1>
 
+            </div>
             <!-- Content here_____________________2_________________-->
             <div class="col-md-4" id="cont3">
 
@@ -207,17 +303,53 @@
                 <table class="table table-striped" id="t1">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">TEXT BLOBS</th>
+                            <th scope="col">DATA VIDRIOS </th>
 
                         </tr>
                     </thead>
-                    <tbody>
-                        {%for formu in frsul %}
-                        <tr>
-                            <td>{{formu}} </td>
+                    <tr>
+                        <td>MÉTRICA </td>
+                        <td>REGRESIÓN LOGÍSTICA </td>
+                        <td>NAIVE BAYES</td>
+                        <td>RANDOM FOREST</td>
+                        <td>SVM</td>
+                        <td>KNN</td>
+                        <td>RED NEURONAL</td>
 
-                        </tr>
-                        {% endfor %}
+                    </tr>
+
+                    <tr>
+                        <td>ACCURACY</td>
+                        {%for elemento in rdt %}
+                        <td>{{elemento}} </td>
+                        {% endfor%}
+
+
+                    </tr>
+                    <tr>
+                        <td>PRECISION</td>
+                        {%for elemento in rdp %}
+                        <td>{{elemento}} </td>
+                        {% endfor%}
+
+
+                    </tr>
+                    <tr>
+                        <td>RECALL</td>
+                        {%for elemento in rdr %}
+                        <td>{{elemento}} </td>
+                        {% endfor%}
+
+
+                    </tr>
+                    <tr>
+                        <td>F-MEASURE</td>
+                        {%for elemento in rdfm %}
+                        <td>{{elemento}} </td>
+                        {% endfor%}
+
+
+                    </tr>
                     </tbody>
                 </table>
                 <!-- end tabal -->
@@ -227,17 +359,7 @@
 
 
             <!-- TEXTBOX -->
-            <div class="col-md-4" id="textb1">
-                <form action="/add_resultado1" method="POST">
-                    <input class="form-control mr-sm-2" type="search" name="consulta" placeholder="Buscar" aria-label="Search">
-                    </br>
-                    <input class="form-control mr-sm-2" type="search" name="numero" placeholder="Número de Twitts" aria-label="Search">
-                    </br>
-                    <input class="form-control mr-sm-2" type="search" name="lenguaje" placeholder="lenguaje" aria-label="Search">
-                    </br>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TextBlobs</button>
-                </form>
-            </div>
+
         </article>
     </main>
 
